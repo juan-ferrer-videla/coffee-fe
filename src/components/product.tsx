@@ -14,12 +14,14 @@ export const Product = ({
   id,
   img,
   description,
+  is_recommended,
 }: {
   title: string;
   price: number;
   id: number;
   img: StaticImageData;
   description?: string;
+  is_recommended: boolean;
 }) => {
   const currency = new Intl.NumberFormat("es-AR", {
     style: "currency",

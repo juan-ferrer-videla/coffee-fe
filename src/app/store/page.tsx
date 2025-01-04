@@ -8,6 +8,7 @@ const products = [
     id: 1,
     img: img1,
     description: "ashdkasjhdakjsdhas dajk sdaks dasd hasdk asdh",
+    is_recommended: true,
   },
   {
     title: "Coffee",
@@ -15,6 +16,7 @@ const products = [
     id: 2,
     img: img1,
     description: "ashdkasjhdakjsdhas dajk sdaks dasd hasdk asdh",
+    is_recommended: true,
   },
   {
     title: "Coffee",
@@ -22,6 +24,7 @@ const products = [
     id: 3,
     img: img1,
     description: "ashdkasjhdakjsdhas dajk sdaks dasd hasdk asdh",
+    is_recommended: true,
   },
 ];
 

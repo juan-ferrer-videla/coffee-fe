@@ -25,9 +25,10 @@ export const EventCard: React.FC<EventCardProps> = ({
   description,
   className= ""
 }) => {
+  /* Condicional para cambiar estilos en events/[id] */
   const isHorizontal = className.includes("flex-row");
+  
   return (
-    
     <Card className={`${className ? className : "w-full h-96"} flex ${isHorizontal ? "flex-row" : "flex-col"}`}>
       <CardHeader className={`${isHorizontal ? "w-1/3 h-auto" : "h-2/3"}`}>
         <Image

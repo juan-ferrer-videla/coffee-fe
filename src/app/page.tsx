@@ -43,7 +43,6 @@ export default function Home() {
           <Link
             key={event.id}
             href={`/events/${event.id}`}
-            className="no-underline"
           >
             <EventCard key={event.id} {...event} />
           </Link>

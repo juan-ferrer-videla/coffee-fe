@@ -25,24 +25,24 @@ export const EventCard: React.FC<EventCardProps> = ({
   description,
   className= ""
 }) => {
+  const isHorizontal = className.includes("flex-row");
   return (
-    <div className={`${className}`}>
-    <Card className={`w-full h-96 ${className}`}>
-      <CardHeader className="h-2/3">
+    
+    <Card className={`${className ? className : "w-full h-96"} flex ${isHorizontal ? "flex-row" : "flex-col"}`}>
+      <CardHeader className={`${isHorizontal ? "w-1/3 h-auto" : "h-2/3"}`}>
         <Image
           src={image}
           alt={title}
           width={300}
           height={200}
-          className="rounded-md w-full h-full object-cover"
+          className={`${isHorizontal ? "w-full h-full object-cover" : "w-full h-full"}`}
         />
       </CardHeader>
-      <CardContent className="h-1/3 flex flex-col justify-between">
+      <CardContent className={`${isHorizontal ? "w-2/3 p-4" : "h-1/3 flex flex-col justify-between"}`}>
         <CardTitle>{title}</CardTitle>
         <CardDescription>{date}</CardDescription>
         <p className="text-sm text-muted-foreground">{description}</p>
       </CardContent>
     </Card>
-    </div>
   );
 };

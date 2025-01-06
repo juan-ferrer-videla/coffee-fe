@@ -5,6 +5,7 @@ import imgevent3 from "@/assets/evento-coffe3.jpg";
 import img1 from "@/assets/cogollo.webp";
 import Link from "next/link";
 import { RecommendedProducts } from "@/components/carrousel-products";
+import { CarrouselBanner } from "@/components/carrousel-banner";
 
 const events = [
   {
@@ -84,9 +85,15 @@ const products = [
 export default function Home() {
   return (
     <>
-      <h1 className="mb-8 scroll-m-20 text-center text-4xl font-extrabold tracking-tight sm:mb-12 md:mb-16 lg:text-5xl xl:text-6xl">
+      <h1 className="mb-8 scroll-m-20 text-center text-4xl font-extrabold tracking-tight sm:mb-12 md:mb-4 lg:text-5xl xl:text-6xl">
         Universo Coffe
       </h1>
+
+      {/* OFERTS OR PROMOCION BANNER */}
+      <div className="mb-8 hidden md:block">
+      <CarrouselBanner/>
+      </div>
+
 
       {/*NEXT EVENTS */}
 

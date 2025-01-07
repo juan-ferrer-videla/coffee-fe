@@ -7,6 +7,7 @@ import Link from "next/link";
 import { RecommendedProducts } from "@/components/carrousel-products";
 import { CarrouselBanner } from "@/components/carrousel-banner";
 import { AboutUsCard } from "@/components/about-us-card";
+import { AboutUsDescription } from "@/components/about-us-description";
 
 const events = [
   {
@@ -98,7 +99,7 @@ export default function Home() {
 
       {/*NEXT EVENTS */}
 
-      <h3 className="mb-1 scroll-m-20 text-1xl font-extrabold tracking-tight sm:mb-2 md:mb-2 lg:text-1xl xl:text-2xl">
+      <h3 className="mb-1 scroll-m-20 text-1xl font-extrabold tracking-tight sm:mb-2 md:mb-6 lg:text-1xl xl:text-2xl">
       Upcoming Events:
       </h3>
       <div className="flex flex-col md:flex-row gap-4 mb-8 sm:mb-12 md:mb-16">
@@ -123,10 +124,12 @@ export default function Home() {
       </div>
 
       {/* ABOUT US SECTION */}
-      <h3 className="mb-8 scroll-m-20 text-center text-4xl font-extrabold tracking-tight sm:mb-12 md:mb-16 lg:text-5xl xl:text-6xl">
+      <h3 className="mb-4 scroll-m-20 text-center text-4xl font-extrabold tracking-tight sm:mb-6 md:mb-8 lg:text-5xl xl:text-6xl">
       About Us
       </h3>
+      <AboutUsDescription/>
       <AboutUsCard/>
+      
     </>
   );
 }

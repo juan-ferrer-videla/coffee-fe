@@ -56,8 +56,9 @@ export default function RootLayout({
           </header>
           <main className="container grow">{children}</main>
           <footer className="container mt-6 md:mt-12 lg:mt-16">
+            
             <div className="border-t" />
-            <div className="my-6 grid gap-6 text-center md:my-10 md:grid-cols-3 md:text-start lg:my-14">
+            <div className="my-6 flex flex-col items-center justify-around gap-6 text-center md:my-10 md:flex-row md:text-start lg:my-14">
               <div>
                 <h3 className="mb-2 scroll-m-20 text-xl font-semibold tracking-tight md:mb-3">
                   Follow us
@@ -116,11 +117,11 @@ export default function RootLayout({
               </div>
               <div>
                 <h3 className="mb-1 scroll-m-20 text-xl font-semibold tracking-tight md:mb-3">
-                  Representante
+                  Contact
                 </h3>
-                <p className="text-sm text-muted-foreground">Rafael Mancini</p>
+                <p className="text-sm text-muted-foreground">universo.coffee@gmail.com</p>
                 <p className="text-sm text-muted-foreground">
-                  CEO Co-Founder & Coffee Máster.
+                   +54 11-1234-5678
                 </p>
               </div>
             </div>

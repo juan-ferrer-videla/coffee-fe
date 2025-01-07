@@ -6,6 +6,7 @@ import img1 from "@/assets/cogollo.webp";
 import Link from "next/link";
 import { RecommendedProducts } from "@/components/carrousel-products";
 import { CarrouselBanner } from "@/components/carrousel-banner";
+import { AboutUsCard } from "@/components/about-us-card";
 
 const events = [
   {
@@ -117,9 +118,15 @@ export default function Home() {
       <h3 className="mb-1 scroll-m-20 text-1xl font-extrabold tracking-tight sm:mb-2 md:mb-2 lg:text-1xl xl:text-2xl">
       Recommended Products:
       </h3>
-      <div>
+      <div className="mb-8">
         <RecommendedProducts products={products} />
       </div>
+
+      {/* ABOUT US SECTION */}
+      <h3 className="mb-8 scroll-m-20 text-center text-4xl font-extrabold tracking-tight sm:mb-12 md:mb-16 lg:text-5xl xl:text-6xl">
+      About Us
+      </h3>
+      <AboutUsCard/>
     </>
   );
 }

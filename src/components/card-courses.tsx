@@ -48,10 +48,10 @@ export const CourseCard: React.FC<CoursesProps> = ({
     </div>
       </CardHeader>
       <CardContent className="flex flex-col p-4">
-        <CardTitle className="text-xl font-bold mb-2">
+        <CardTitle className="text-2xl font-bold mb-2">
           {title}
         </CardTitle>
-        <CardDescription className="mb-1">
+        <CardDescription className="mb-1 text-base">
           <p>{description}</p>
           <p
             className={`mt-2 text-sm font-semibold mb-1 px-2 w-min py-1 rounded ${
@@ -63,14 +63,14 @@ export const CourseCard: React.FC<CoursesProps> = ({
             {is_presencial ? "Presencial" : "Virtual"}
           </p>
         </CardDescription>
-        <div className="flex mt-auto ml-auto">
+        <CardFooter className="p-0 flex mt-auto ml-auto">
           <p className="justify-end mt-auto mr-2 w-min text-lg font-bold bg-yellow-500 text-black px-3 py-1 rounded shadow">
             ${price}
           </p>
           <Button variant="secondary" className="mt-auto">
             Adquirir
           </Button>
-        </div>
+        </CardFooter>
       </CardContent>
     </Card>
   );

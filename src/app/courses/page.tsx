@@ -49,12 +49,12 @@ export default async function Home() {
     <>
       <div className="flex flex-col items-center text-center">
         <h1 className="mb-8 text-4xl font-extrabold uppercase tracking-tight lg:text-5xl xl:text-6xl">
-          Courses
+          Nuestros Cursos
         </h1>
         <Image
           src={banner}
           alt="banner"
-          className="mb-6 w-full object-cover h-96 rounded-2xl"
+          className="mb-6 w-full object-cover xl:h-96 rounded-2xl"
         />
         <div className="mb-12 mt-2">
           <p className="text-lg text-center mt-4">
@@ -77,7 +77,7 @@ export default async function Home() {
           height="315"
           src="https://www.youtube.com/embed/Nnxxfi0tuDg?si=7fmxQ3znvp-hDaSG"
           title="YouTube video player"
-          className="frameBorder-0 referrerPolicy-strict-origin-when-cross-origin"
+          className="frameBorder-4 rounded-2xl referrerPolicy-strict-origin-when-cross-origin"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
         ></iframe>
       </div>

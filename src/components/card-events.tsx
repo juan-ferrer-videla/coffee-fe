@@ -41,8 +41,8 @@ export const EventCard: React.FC<EventCardProps> = ({
       </CardHeader>
       <CardContent className={`${isHorizontal ? "w-2/3 p-4" : "h-1/3 flex flex-col justify-between"}`}>
         <CardTitle>{title}</CardTitle>
-        <CardDescription>{date}</CardDescription>
-        <p className="text-sm text-muted-foreground">{description}</p>
+        <CardDescription className="line-clamp-1">{description}</CardDescription>
+        <p className="text-sm text-muted-foreground line-clamp-2">{date}</p>
       </CardContent>
     </Card>
   );

@@ -7,6 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Image, { StaticImageData } from "next/image";
+import { Button } from "@/components/ui/button";
 
 interface CoursesProps {
   id: number;
@@ -34,32 +35,43 @@ export const CourseCard: React.FC<CoursesProps> = ({
   videoUrl,
 }) => {
   return (
-    <Card className="mb-8 flex flex-col md:flex-row items-start rounded-lg shadow-lg p-4 w-3/4 transition-transform duration-300 transform hover:scale-110">
-      <CardHeader className="w-full md:w-1/3 p-0">
-        <Image
-          src={img}
-          alt={title}
-          width={300}
-          height={200}
-          className="rounded-lg object-cover"
-        />
+    <Card className="flex flex-col lg:flex-row mb-4 transition-transform duration-300 transform hover:scale-105">
+      <CardHeader className="p-2 w-full lg:w-1/3 flex-shrink-0">
+      <div className="relative w-full h-48 lg:h-full">
+      <Image
+        src={img}
+        alt={title}
+        layout="fill"
+        objectFit="cover"
+        className="rounded-lg"
+      />
+    </div>
       </CardHeader>
-      <CardContent className="flex flex-col justify-between md:ml-4 w-full md:w-2/3 p-0">
-        <CardTitle className="text-white text-lg font-semibold mb-2">
+      <CardContent className="flex flex-col p-4">
+        <CardTitle className="text-xl font-bold mb-2">
           {title}
         </CardTitle>
-        <CardDescription className="mb-1 text-white">
-          {description}
+        <CardDescription className="mb-1">
+          <p>{description}</p>
+          <p
+            className={`mt-2 text-sm font-semibold mb-1 px-2 w-min py-1 rounded ${
+              is_presencial
+                ? "bg-green-600 text-white"
+                : "bg-blue-600 text-white"
+            }`}
+          >
+            {is_presencial ? "Presencial" : "Virtual"}
+          </p>
         </CardDescription>
-        <p className="text-sm text-white mb-1">
-          {is_presencial ? "Presencial" : "Virtual"}
-        </p>
-        <p className="text-sm text-white mb-2">Precio: ${price}</p>
+        <div className="flex mt-auto ml-auto">
+          <p className="justify-end mt-auto mr-2 w-min text-lg font-bold bg-yellow-500 text-black px-3 py-1 rounded shadow">
+            ${price}
+          </p>
+          <Button variant="secondary" className="mt-auto">
+            Adquirir
+          </Button>
+        </div>
       </CardContent>
-      <CardFooter className="ml-4 flex-col text-sm text-white mt-4 w-1/3 md:mt-0 p-0">
-        <p>Instructor: {instructor}</p>
-        <p>{instructorDescription}</p>
-      </CardFooter>
     </Card>
   );
 };

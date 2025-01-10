@@ -12,7 +12,7 @@ const courses = [
   description: "Aprende a preparar el mejor café del mundo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores excepturi expedita temporibus. Vero aspernatur asperiores, fuga, accusantium earum alias dolor dignissimos fugiat vel, harum a. Consectetur reiciendis eveniet mollitia fuga.",
   img: cursoImg,
   is_presencial: true,
-  price: 3400,
+  price: 150000,
   instructor: "Juan Perez",
   instructorImg: instructorImg,
   instructorDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores excepturi expedita temporibus.",
@@ -20,11 +20,11 @@ const courses = [
 },
 {
   id: 2,
-  title: "Curso de Diseño Gráfico",
-  description: "lore ipsum dolor sit amet consectetur adipisicing elit. Asperiores excepturi expedita temporibus. Vero aspernatur asperiores, fuga, accusantium earum alias dolor dignissimos fugiat vel, harum a. Consectetur reiciendis eveniet mollitia fuga.",
+  title: "Curso de Cafe",
+  description: "Aprende a preparar el mejor café del mundo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores excepturi expedita temporibus. Vero aspernatur asperiores, fuga, accusantium earum alias dolor dignissimos fugiat vel, harum a. Consectetur reiciendis eveniet mollitia fuga, loren ipsum dolor sit amet consectetur adipisicing elit. Asperiores excepturi expedita temporibus. Vero aspernatur asperiores, fuga, accusantium earum alias dolor dignissimos fugiat vel, harum a. Consectetur reiciendis eveniet mollitia fuga.",
   img: cursoImg,
   is_presencial: false,
-  price: 4000,
+  price: 35000,
   instructor: "Juan Perez",
   instructorImg: instructorImg,
   instructorDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores excepturi expedita temporibus.",
@@ -32,16 +32,16 @@ const courses = [
 },
 {
   id: 3,
-  title: "Cumbre de Innovación",
-  description: "Explora ideas innovadoras en el mundo empresarial.",
+  title: "Curso de Cafe",
+  description: "Aprende a preparar el mejor café del mundo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores excepturi expedita temporibus. Vero aspernatur asperiores, fuga, accusantium earum alias dolor dignissimos fugiat vel, harum a. Consectetur reiciendis eveniet mollitia fuga.",
   img: cursoImg,
   is_presencial: true,
-  price: 5400,
+  price: 500000,
   instructor: "Juan Perez",
   instructorImg: instructorImg,
   instructorDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores excepturi expedita temporibus.",
   videoUrl: "https://www.youtube.com/embed/Nnxxfi0tuDg?si=7fmxQ3znvp-hDaSG",
-}];
+},];
 
 export default async function Home() {
 
@@ -84,12 +84,9 @@ export default async function Home() {
 
       <div className="mt-8">
       {courses.map((course) => (
-            <Link href={`/courses/${course.id}`} key={course.id}>
             <CourseCard key={course.id} {...course} />
-            </Link>
         ))}
       </div>
-
     </>
   );
 }

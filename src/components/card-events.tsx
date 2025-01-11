@@ -30,7 +30,7 @@ export const EventCard: React.FC<EventCardProps> = ({
   
   return (
     <Card className={`${className ? className : "w-full h-96"} flex transition-transform duration-300 transform hover:scale-110 ${isHorizontal ? "flex-row" : "flex-col"}`}>
-      <CardHeader className={`${isHorizontal ? "w-1/3 h-auto" : "h-2/3"}`}>
+      <CardHeader className={`${isHorizontal ? "w-1/3 h-auto" : "w-2/3"}`}>
         <Image
           src={image}
           alt={title}
@@ -41,8 +41,8 @@ export const EventCard: React.FC<EventCardProps> = ({
       </CardHeader>
       <CardContent className={`${isHorizontal ? "w-2/3 p-4" : "h-1/3 flex flex-col justify-between"}`}>
         <CardTitle>{title}</CardTitle>
-        <CardDescription className="line-clamp-1">{description}</CardDescription>
-        <p className="text-sm text-muted-foreground line-clamp-2">{date}</p>
+        <CardDescription>{description}</CardDescription>
+        <p className="text-sm text-muted-foreground">{date}</p>
       </CardContent>
     </Card>
   );

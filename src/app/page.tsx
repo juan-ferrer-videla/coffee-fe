@@ -101,7 +101,6 @@ export default function Home() {
           Coffe.ar
         </h1>
 
-
       {/* OFERTS OR PROMOCION BANNER */}
       <div className="mb-8 hidden md:block">
         <CarrouselBanner />

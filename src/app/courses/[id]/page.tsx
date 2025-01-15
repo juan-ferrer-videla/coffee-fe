@@ -3,6 +3,7 @@ import cursoImg from "@/assets/cursoImg.jpg";
 import instructorImg from "@/assets/instructorImg.jpeg";
 import { FrequentQuestions } from "@/components/frequent-questions";
 import banner from "@/assets/banner-courses.png";
+import { Button } from "@/components/ui/button";
 
 const courses: CoursesProps[] = [
   {
@@ -112,7 +113,7 @@ export default async function CourseIdPage(props: {
       (presencial) => presencial.courseId === courseId
     );
   }
-  
+
   let presencialDetails = null;
   if (course.is_presencial) {
     presencialDetails = await getPresencialDetails(course.id);
@@ -129,7 +130,7 @@ export default async function CourseIdPage(props: {
         alt="banner"
         className="w-full object-cover xl:h-96 rounded-2xl shadow-lg"
       />
-  
+
       {/* SECCIÓN DEL INSTRUCTOR */}
       <div className="mt-6 w-full lg:w-4/5">
         <h2 className="text-3xl mb-6 text-center">Instructor</h2>
@@ -142,13 +143,11 @@ export default async function CourseIdPage(props: {
               className="w-full md:w-1/3 object-cover"
             />
             <div className="p-4">
-              <h2 className="text-xl font-bold ">
-                {course.instructor}
-              </h2>
+              <h2 className="text-xl font-bold ">{course.instructor}</h2>
               <p className="text-base ">{course.instructorDescription}</p>
             </div>
           </div>
-  
+
           {/* Video del Curso */}
           <div className="w-full lg:w-[48%]">
             <iframe
@@ -162,13 +161,10 @@ export default async function CourseIdPage(props: {
       </div>
 
       {/* DESCRIPCION DEL CURSO DE NUEVO ?? */}
-
       <div className="mt-2">
-      <p className="text-lg text-center mt-4">
-        {course.description}
-      </p>
-    </div>
-  
+        <p className="text-lg text-center mt-4">{course.description}</p>
+      </div>
+
       {/* DETALLES DEL CURSO */}
       <div className="mt-8 w-full lg:w-4/5 bg-gray-800 p-6 rounded-lg shadow-lg">
         {course.is_presencial ? (
@@ -185,7 +181,11 @@ export default async function CourseIdPage(props: {
               </li>
               <li>
                 <strong className="">Vacantes disponibles:</strong>{" "}
-                <span className="">{presencialDetails?.vacancies ? presencialDetails.vacancies : "No hay vacantes disponibles"}</span>
+                <span className="">
+                  {presencialDetails?.vacancies
+                    ? presencialDetails.vacancies
+                    : "No hay vacantes disponibles"}
+                </span>
               </li>
               <li>
                 <strong className="">Ubicación:</strong>{" "}
@@ -201,13 +201,27 @@ export default async function CourseIdPage(props: {
           <div>
             <h2 className="text-2xl mb-4 ">Detalles del Curso Virtual</h2>
             <p className="">
-              Este curso es completamente en línea. Podrás acceder al contenido desde
-              cualquier lugar y seguirlo a tu propio ritmo en esta msima pagina, una vez que hayas comprado el curso.
+              Este curso es completamente en línea. Podrás acceder al contenido
+              desde cualquier lugar y seguirlo a tu propio ritmo en esta msima
+              pagina, una vez que hayas comprado el curso.
             </p>
           </div>
         )}
       </div>
-  
+
+      {/* PRECIO Y BOTÓN DE COMPRA */}
+      <div className="mt-8 w-full lg:w-4/5 flex items-center justify-center lg:flex-row gap-4">
+        <p className="text-xl font-bold bg-yellow-500 text-black px-4 py-2 rounded shadow flex items-center justify-center h-full">
+          ${course.price}
+        </p>
+        <Button
+          variant="secondary"
+          className="w-full lg:w-min flex items-center justify-center px-4 py-2 text-lg h-full"
+        >
+          Adquirir
+        </Button>
+      </div>
+
       {/* PREGUNTAS FRECUENTES */}
       <div className="mt-12 w-full lg:w-4/5">
         <h2 className="text-3xl mb-4 text-center">Preguntas Frecuentes</h2>
@@ -215,4 +229,4 @@ export default async function CourseIdPage(props: {
       </div>
     </div>
   );
-}  
+}
